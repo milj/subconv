@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="de" xmlns="http://www.w3.org/2006/04/ttaf1" xmlns:tts="http://www.w3.org/2006/10/ttaf1#style">
+  <head>
+    <styling>
+      <style id="c1" tts:color="#FFFFFF" tts:textAlign="center"/>
+    </styling>
+  </head>
+  <body>
+    <div xml:lang="de" style="c1">
+      <p begin="02.5" end="05.4" tts:textAlign="center">Wer dürfte aber wohl Den tadeln  <br/>der nach einer Lust verlangt.  </p>
+      <p begin="07.6" end="11.6" tts:textAlign="center">Gleiche Schuld treffe Die,  <br/>welche aus geistiger Schwäche.  </p>
+    </div>
+  </body>
+</tt>
