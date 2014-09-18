@@ -1,7 +1,7 @@
 require 'test/unit'
 require 'subconv'
 
-class SubconvTest < Test::Unit::TestCase
+class FormatterTest < Test::Unit::TestCase
 
   def setup_subtitle
     @subtitle = Subconv::Subtitle.new
@@ -22,13 +22,5 @@ class SubconvTest < Test::Unit::TestCase
     formatter = Subconv::SRTFormatter.new
     assert_equal "1\n00:00:01,000 --> 00:00:02,000\nAbc\nDef\n\n", formatter.output_subtitle( @subtitle )
   end
-
-  def test_subtitle_set_read
-    subtitle_set = Subconv::SubtitleSet.new
-    subtitle_set.read( File.join( File.dirname(__FILE__), 'fixtures', 'example_input.xml' ) )
-    assert_equal 2, subtitle_set.subtitles.length
-  end
-
-  # TODO more
 
 end

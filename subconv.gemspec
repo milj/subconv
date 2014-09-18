@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name          = 'subconv'
   s.version       = Subconv::VERSION
   s.platform      = Gem::Platform::RUBY
-  s.authors       = ['M. Jerkiewicz']
+  s.authors       = ['Miłosz Jerkiewicz']
   s.email         = 'sncf@users.noreply.github.com'
   s.date          = '2014-09-16'
   s.summary       = 'Subtitle converter'

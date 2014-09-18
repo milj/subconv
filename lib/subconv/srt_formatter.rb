@@ -11,15 +11,12 @@ module Subconv
 
     def output_subtitle( subtitle )
       @subtitle_counter += 1
-      timecodes = [subtitle.start_time, subtitle.end_time].map { |time| timecode( time ) }
+      timecodes = [subtitle.start_time, subtitle.end_time].map { |time| SRTFormatter.timecode( time ) }
       return "#{ @subtitle_counter }\n#{ timecodes.join( ' --> ' ) }\n#{ subtitle.lines.join( "\n" ) }\n\n"
     end
 
-    private
-
     # example SRT timecode: 00:02:17,440  (hours:minutes:seconds,miliseconds)
-    # TODO make it a private_class_method ?
-    def timecode( time )  # time is given in seconds
+    def self.timecode( time )  # time is given in seconds
       return sprintf(
         '%02d:%02d:%02d,%03d',
         time / 3600,
