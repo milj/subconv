@@ -12,4 +12,4 @@ Example parseable input file is `test/fixtures/1.xml`.
 
 Parse other flavours (`2.xml`, `3.xml`)  
 Translate text position and formatting markup  
-Infer output format from output filename's suffix if -f not specified
+Infer output format from output filename's suffix if `-f` not specified

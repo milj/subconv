@@ -51,10 +51,10 @@ module Subconv
     # returns the number of seconds
     # time_string can be e.g. '00:00:12.300' or '00:00:12' or '00:12' or '1234.5678'
     def self.parse_time( time_string )
-      elements = time_string.match( /\A(((\d{2}):)?((\d{2}):))?(\d+(\.\d+)?)?\z/ )
+      elements = time_string.match( /\A(((\d{2}):)?((\d{2}):))?(\d+(\.\d+)?)?\z/ )  # TODO use optional groups
       return { 3 => 3600, 5 => 60, 6 => 1 }.map do |position, multiplier|
         BigDecimal( elements[position] || '' ) * multiplier
-      end.reduce( 0 ) { |acc, n| acc + n }
+      end.inject( :+ )
     rescue
       raise 'Malformatted time'
     end

@@ -1,5 +1,4 @@
-require 'test/unit'
-require 'subconv'
+require_relative '../test_helper'
 
 class SubtitleSetTest < Test::Unit::TestCase
 
@@ -24,7 +23,7 @@ class SubtitleSetTest < Test::Unit::TestCase
 
   def test_subtitle_set_read
     subtitle_set = Subconv::SubtitleSet.new
-    subtitle_set.read( File.join( File.dirname(__FILE__), 'fixtures', '1.xml' ) )
+    subtitle_set.read( File.join( File.dirname(__FILE__), '..', 'fixtures', '1.xml' ) )
     assert_equal 2, subtitle_set.subtitles.length
   end
 
