@@ -4,23 +4,7 @@
 lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
 $LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
 
-begin
-  require 'subconv'
-rescue LoadError
-  require 'rubygems'
-  require 'subconv'
-end
+require 'subconv'
 
-options = Subconv::Util.parse_options(ARGV)
-input_filename = ARGV[0]
-output_filename = ARGV[1]
-
-# TODO: better error handling
-Subconv::Util.panic('No input file given') if input_filename.nil? || input_filename.empty?
-Subconv::Util.panic('No output file given') if output_filename.nil? || output_filename.empty?
-
-formatter = Subconv.make_formatter(options)
-
-subtitle_set = Subconv::SubtitleSet.new
-subtitle_set.read(input_filename)
-subtitle_set.write(formatter, output_filename)
+runner = Subconv::Runner.new(ARGV)
+runner.run
